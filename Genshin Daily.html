@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Genshin Impact - Daily Domain Rotation Checker</title>
+
+    <style>
+        table, th, td{
+            border: 2px solid black;
+            border-collapse: collapse;
+            background-color: rgba(255,255,255,.5);
+        }
+        th, td{
+            padding: 15px;
+        }
+        body{
+            background-image: url('background.png');
+            background-repeat: no-repeat;
+            background-position: center;
+
+        }
+        /* Dropdown Button */
+        .dropbtn {
+            background-color: #0462aa;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: 2px solid black;
+        }
+
+        /* The container <div> - needed to position the dropdown content */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {background-color: #ddd;}
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {display: block;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {background-color: #ddd;}
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {display: block;}
+
+        /* Change the background color of the dropdown button when the dropdown content is shown */
+        .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+    </style>
+
+</head>
+
+<body>
+<h1>Genshin Impact - Daily Domain Reference</h1>
+<h2>Created by Thomas Ling</h2>
+<br>
+
+<div class = "dropdown">
+    <button class = "dropbtn" onclick="theDay">Select the Day</button>
+    <div class = "dropdown-content">
+        <a href="#" onclick="checkDate('Mon')">Monday</a>
+        <a href="#" onclick="checkDate('Tues')">Tuesday</a>
+        <a href="#" onclick="checkDate('Weds')">Wednesday</a>
+        <a href="#" onclick="checkDate('Thrs')">Thursday</a>
+        <a href="#" onclick="checkDate('Fri')">Friday</a>
+        <a href="#" onclick="checkDate('Sat')">Saturday</a>
+        <a href="#" onclick="checkDate('Sun')">Sun</a>
+    </div>
+</div>
+<h2>Character Talents</h2>
+<h4>*Be aware that the Traveler requires all of Character Talent books.</h4>
+<div id>
+<h3>Forsaken Rift</h3>
+<table style="width:100%" id ="Forsaken">
+    <tr >
+        <th >4* Characters</th>
+        <th >5* Characters</th>
+    </tr>
+    <tr >
+        <td >test1</td>
+        <td >test2</td>
+    </tr >
+</table>
+
+<h3>Taishan Mansion</h3>
+<table style="width:100%" id ="Taishan">
+    <tr >
+        <th >4* Characters</th>
+        <th >5* Characters</th>
+    </tr>
+    <tr >
+        <td >test1</td>
+        <td >test2</td>
+    </tr>
+</table>
+
+<h3>Violet Court</h3>
+<table style="width:100%" id ="Violet">
+    <tr >
+    <th >4* Characters</th>
+    <th >5* Characters</th>
+    </tr>
+    <tr >
+        <td >test1</td>
+        <td >test2</td>
+    </tr>
+</table>
+
+<h2>Weapon Ascension</h2>
+
+<h3>Cecilia Garden</h3>
+<table style="width:100%" id ="Cecilia">
+    <tr >
+        <th >1-3* Weapons</th>
+        <th >4-5* Weapons</th>
+    </tr>
+    <tr >
+        <td >test</td>
+        <td >test2</td>
+    </tr>
+</table>
+
+<h3>Hidden Place of Lianshan Formula</h3>
+<table style="width:100%" id ="Hidden">
+    <tr >
+        <th >1-3* Weapons</th>
+        <th >4-5* Weapons</th>
+    </tr>
+    <tr >
+        <td >test</td>
+        <td >test2</td>
+    </tr>
+</table>
+
+<h3>Court of Flowing Sand</h3>
+<table style="width:100%" id ="Sand">
+    <tr>
+    <th >1-3* Weapons</th>
+    <th >4-5* Weapons</th>
+    </tr>
+    <tr >
+        <td >test</td>
+        <td >test2</td>
+    </tr>
+</table>
+<script>
+    let dayTable = document.getElementById("theDay");
+    let forsakenT = document.getElementById("Forsaken"),
+        taishanT = document.getElementById("Taishan"),
+        violetT = document.getElementById("Violet"),
+        ceciliaT = document.getElementById("Cecilia"),
+        hiddenT = document.getElementById("Hidden"),
+        sandT = document.getElementById("Sand");
+    checkDate('Mon');
+    function checkDate(value){
+    switch(value){
+        case "Mon":
+        case "Thrs":
+            console.log("Day is Monday");
+            forsakenT.rows[1].cells[0].innerHTML = 'Amber, Barbara, Sucrose, Diona';
+            forsakenT.rows[1].cells[1].innerHTML = 'Klee, Tartaglia, Aloy';
+            taishanT.rows[1].cells[0].innerHTML = 'Ninguang';
+            taishanT.rows[1].cells[1].innerHTML = 'Keqing, Qiqi, Xiao';
+            violetT.rows[1].cells[0].innerHTML = 'N/A';
+            violetT.rows[1].cells[1].innerHTML = 'Yoimiya, Sangonomi ya Kokomi';
+            ceciliaT.rows[1].cells[0].innerHTML = "Dull Blade, Silver Sword, Cool Steel, Ferrous Shadow, Raven Bow, Apprentice's Notes, Magic Guide";
+            ceciliaT.rows[1].cells[1].innerHTML = 'Favonius Sword, Royal Longsword, The Alley Flash, Aquilla Favonia, The Bell, Snow-Tombed Starsilver, Song of Broken Pines, The Stringless, The Viridescent Hunt, Mitternachts Waltz, Favonius Codex, Royal Grimoire';
+            hiddenT.rows[1].cells[0].innerHTML = 'The Other Side, White Tassel, Slingshot, Emerald Orb';
+            hiddenT.rows[1].cells[1].innerHTML = "Dark Iron Sword, Blackcliff Longsword, Lion's Roar, Summit Shaper, Lithic Blade, Whiteblind, Primordial Jade Winged-Spear, Blackcliff Warbow, Rust, Blackcliff Agate, Solar Pearl" ;
+            sandT.rows[1].cells[0].innerHTML = 'N/A';
+            sandT.rows[1].cells[1].innerHTML = 'Amenorma Kageuchi, Mistsplitter Reforged, Hakushin Ring, Fumetsu Gekka';
+            break;
+        case "Tues":
+        case "Fri":
+            console.log("Day is Tuesday");
+            forsakenT.rows[1].cells[0].innerHTML = 'Bennett, Noelle, Razor';
+            forsakenT.rows[1].cells[1].innerHTML = 'Diluc, Jean, Mona, Eula';
+            taishanT.rows[1].cells[0].innerHTML = 'Chongyun, Xiangling';
+            taishanT.rows[1].cells[1].innerHTML = 'Ganyu, Hu Tao, Kaedehara Kazuha';
+            violetT.rows[1].cells[0].innerHTML = 'Kujou Sara';
+            violetT.rows[1].cells[1].innerHTML = 'Kamisato Ayaka';
+            ceciliaT.rows[1].cells[0].innerHTML = "Wraster Greatsword, Old Merc's Pal, Bloodtainted Greatsword, Harbringer of Dawn, Hunter's Bow, Seasoned Hunter's Bow, Sharpshooters's Oath, Thrilling Tales of Dragon Slayers";
+            ceciliaT.rows[1].cells[1].innerHTML = 'The Black Sword, The Flute, Sword of Descension, Skyward Blade, Sacrificial Greatsword, Skyward Pride, Deathmatch, Dragonspine Spear, Sacrificial Bow, Skyward Harp, Elegy for the End, The Widsith, Wine and Song, Dodoco Tales, Skyward Atlas';
+            hiddenT.rows[1].cells[0].innerHTML = 'Fillet Blade, Debate Club, Messenger, Twin Nephrite';
+            hiddenT.rows[1].cells[1].innerHTML = "Prototype Rancour, Primordial Jade Cutter, Blackcliff Slasher, Rainslasher, The Unforged, Blackcliff Pole, ";
+            sandT.rows[1].cells[0].innerHTML = 'Katsuragikiri Nagamasa, Hamayumi, Predator';
+            sandT.rows[1].cells[1].innerHTML = 'Thundering Pulse';
+            break;
+        case "Weds":
+        case "Sat":
+            console.log("Day is Wednesday");
+            forsakenT.rows[1].cells[0].innerHTML = 'Fischl, Kaeya, Lisa, Rosaria';
+            forsakenT.rows[1].cells[1].innerHTML = 'Venti, Albedo';
+            taishanT.rows[1].cells[0].innerHTML = 'Beidou, Xingqiu, Xinyan, Yanfei';
+            taishanT.rows[1].cells[1].innerHTML = 'Zhongli';
+            violetT.rows[1].cells[0].innerHTML = 'Sayu';
+            violetT.rows[1].cells[1].innerHTML = 'Raiden Shogun';
+            ceciliaT.rows[1].cells[0].innerHTML = "Traveler's Handy Sword, White Iron Greatsword, Beginner's Protector, Iron Point, Recurve Bow, Otherworldly Story";
+            ceciliaT.rows[1].cells[1].innerHTML = "Sacrificial Sword, Festering Desire, Freedom-Sworn, Favonius Greatsword, Royal Greatsword, Wolf's Gravestone, Favonius Lance, Skyward Spine, Alley Hunter, Favonius Warbow, Royal Bow, Windbluem Ode, Amos' Bow, Sacrificial Fragments, Frostbearer, Lost Prayer to the Sacred Winds";
+            hiddenT.rows[1].cells[0].innerHTML = 'Skyrider Sword, Skyrider Greatsword, Black Tassel, Compound Bow';
+            hiddenT.rows[1].cells[1].innerHTML = 'Iron Sting, Prototype Archaic, Serpent Spine, Luxurious Sea-Lord, Primordial Jade Greatsword, Lithic Spear, Prototype Starglitter, Vortex Vanquisher, Staff of Homa, Mappa Mare, Memory of Dust';
+            sandT.rows[1].cells[0].innerHTML = 'Kitain Cross Spear, The Catch';
+            sandT.rows[1].cells[1].innerHTML = "Grasscutter's Light";
+            break;
+        case "Sun":
+            console.log("Day is Sunday");
+            forsakenT.rows[1].cells[0].innerHTML = 'All';
+            forsakenT.rows[1].cells[1].innerHTML = 'All';
+            taishanT.rows[1].cells[0].innerHTML = 'All';
+            taishanT.rows[1].cells[1].innerHTML = 'All';
+            violetT.rows[1].cells[0].innerHTML = 'All';
+            violetT.rows[1].cells[1].innerHTML = 'All';
+            ceciliaT.rows[1].cells[0].innerHTML = 'All';
+            ceciliaT.rows[1].cells[1].innerHTML = 'All';
+            hiddenT.rows[1].cells[0].innerHTML = 'All';
+            hiddenT.rows[1].cells[1].innerHTML = 'All';
+            sandT.rows[1].cells[0].innerHTML = 'All';
+            sandT.rows[1].cells[1].innerHTML = 'All';
+            break;
+    }
+}
+</script>
+</div>
+</body>
+</html>
